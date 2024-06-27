@@ -1,0 +1,539 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap');
+
+:root {
+    --my-main: 	#FAF9F6;
+    --my-hover:#DADADA;
+    --my-text:#141414;
+    --my-hero:#F0F0F0;
+}
+[data-theme='darktheme']{
+    --my-main: #000000;
+    --my-hover:#151515;
+    --my-text:#D6D6D6;
+    --my-hero:#373737;
+}
+[data-theme='luxury']{
+    --my-main: #09090B;
+    --my-hover:#1E1912;
+    --my-text:#DCA54C;
+    --my-hero:#331800;
+}
+[data-theme='cupcake']{
+    --my-main: #f0f1e2;
+    --my-hover:#f1ebc5;
+    --my-text:#E57E93;
+    --my-hero:#f0f1e2;
+}
+body{
+    min-height: 100vh;
+    background: var(--my-hero);
+    padding-top: 60px ;
+}
+*{
+    margin: 0;
+    padding: 0;   
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Itim", cursive;
+
+}
+
+
+
+
+
+/*_____________________________________________________navbar_________________________________________________________*/
+.navbars{
+    background: var(--my-main);
+    box-shadow: 1px 0.2px 10px #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1001;
+    color: var(--my-text);
+    .nav-con{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        
+    }
+    .nav-logo{
+        display: flex;
+        align-items: center;
+        
+    }
+    .nav-logo img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-left: 10px;
+    }
+    .nav-logo img:hover{
+        transition: all 1.0s;
+        transform: rotate(360deg);
+    }
+    .nav-logo p{
+        margin-left: 10px;
+        cursor:default;
+    }
+    .addcom{
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        color: var(--my-text);
+        border-radius: 10px;
+    }
+    .addcom:hover{
+        color: var(--my-text);
+        background: var(--my-hover);
+    }
+    .theme-con{
+        background: var(--my-main);
+        border: none;
+        color:var(--my-text);
+    }
+    .theme-con:hover{
+        background: var(--my-hover);
+        
+    }
+    .theme-drop{
+        background: var(--my-main);
+    }
+    .theme-drop li:hover{
+        background: var(--my-hover);
+        border-radius: 10px;
+    }
+    
+}
+/*_____________________________________________________sidebar_________________________________________________________*/
+.sidebars{    
+    position: fixed;
+    background: var(--my-main);
+    left: 0;
+    top: 58px;
+    height: 100%;
+    width: 85px;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    box-shadow: 0.1px 0.5px 10px #000000;
+    .sidebar-link{
+        list-style: none;
+        height: 80%;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+    .sidebar-link h4 span{
+        opacity: 0;
+    }
+    .sidebar-link .line{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        transform: scaleX(1);
+        transform: translateY(-50%);
+        background: var(--my-hover);
+        transform-origin:right ;
+        transition-duration: 0.2s ;
+    }
+    .sidebar-link h4{
+        color: var(--my-text);
+        font-weight: 500;
+        margin: 10px 0;
+        white-space: nowrap;
+        position: relative;
+    }
+    .sidebar-link li a{
+        color: var(--my-text);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+        padding: 15px 10px;
+        white-space: nowrap;
+    }
+    .menus{
+        color: var(--my-text);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+        padding: 15px 10px;
+        white-space: nowrap;
+    }
+
+}
+.sidebars:hover{    
+    width: 260px;
+}
+.sidebars:hover .sidebar-link h4 span{
+    opacity: 1;
+}
+.sidebars:hover .sidebar-link .line{
+    transition-delay: 0s;
+    transform: scaleX(0);
+}
+.sidebar-link li a:hover{
+    background: var(--my-hover);
+    color: var(--my-text);
+    border-radius: 8px;
+}
+.menus:hover{
+    background: var(--my-hover);
+    color: var(--my-text);
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+/*_____________________________________________________ตัวอกษรlogin_________________________________________________*/
+.text-login{
+    color: var(--my-text);
+    text-shadow: 5px 10px 8px #000000;
+}
+/*______________________________________________________สีปุ่มlogin___________________________________________________*/
+button.color{
+    background: linear-gradient( 45deg, #ffa69e, #faf3dd, #b8f2e6, #aed9e0, #5e6472);
+}
+/*_______________________________________________________แถว2=6____________________________________________________*/
+.d2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1rem;
+    margin: 1rem auto;
+}
+.d3{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1rem;
+    margin: 1rem auto;
+}
+.d4{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 1rem;
+    margin: 1rem auto; 
+}
+.d5{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    column-gap: 1rem;
+    margin: 1rem auto; 
+}
+.d6{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    column-gap: 1rem;
+    margin: 1rem auto; 
+}
+/*_________________________________________________แถวในช่องการศึกษา_________________________________________________*/
+.schoolrow1{
+    display: grid;
+    grid-template-columns: 160px 80px 80px 500px ;
+    column-gap: 1rem;
+    margin: 1rem auto; 
+}
+.schoolrow2{
+    display: grid;
+    grid-template-columns: 160px 180px 200px ;
+    column-gap: 1rem;
+    margin: 1rem auto; 
+}
+/*_________________________________________________box จัดหมวดหมู___________________________________________________*/
+.box2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 31rem 32rem;
+    gap: 2rem;
+    h2{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .sub{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+}
+/*______________________________________________________ปุ่มต่างๆ_____________________________________________________*/
+.button{
+    button{
+        padding: 8px 20px;
+        background: none;
+        border: 2px solid var(--clr);
+        color: var(--clr);
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+     }
+    a{
+        padding: 8px 20px;
+        background: none;
+        border: 2px solid var(--clr);
+        color: var(--clr);
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+     }
+    label{
+        padding: 8px 20px;
+        background: none;
+        border: 2px solid var(--clr);
+        color: var(--clr);
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+     }
+     a::before,a::after{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 4px;
+        background:#fff;
+        transform: skewX(50deg);
+        transition: 0.4s linear;
+    }
+    label::before,label::after{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 4px;
+        background:#fff;
+        transform: skewX(50deg);
+        transition: 0.4s linear;
+    }
+    button::before,button::after{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 4px;
+        background:#fff;
+        transform: skewX(50deg);
+        transition: 0.4s linear;
+    }
+    a::before{
+        top: -4px;
+        left: 10%;
+    }
+    label::before{
+        top: -4px;
+        left: 10%;
+    }
+    button::before{
+        top: -4px;
+        left: 10%;
+    }
+    a::after{
+        bottom: -4px;
+        right: 10%;
+    }
+    label::after{
+        bottom: -4px;
+        right: 10%;
+    }
+    button::after{
+        bottom: -4px;
+        right: 10%;
+    }
+     a:hover::before{
+        left: 80%;
+    }
+    label:hover::before{
+        left: 80%;
+    }
+    button:hover::before{
+        left: 80%;
+    }
+    a:hover::after{
+        right:80% ;
+    }
+    label:hover::after{
+        right:80% ;
+    }
+    button:hover::after{
+        right:80% ;
+    }
+}
+.btnmodify{
+    box-shadow: 0 5px #999;
+    cursor: pointer;
+    outline: none;
+}
+.btnmodify:active {
+    box-shadow: 0 10px #666;
+    transform: translateY(4px);
+}
+.inputmodify{
+    box-shadow: 0 5px #999;
+    cursor: pointer;
+    outline: none;
+}
+.btn-goadmin{
+    a{
+        position: relative;
+        width: 200px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        letter-spacing: 2px;
+        border: 1px solid #000;
+        padding-left: 40px;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    a:hover{
+        padding-left: 0px;
+        padding-right: 40px;
+        color: rgba(255,255,255,1);
+    }
+    span{
+        position: absolute;
+        left: 5px;
+        width: 45px;
+        height: 45px;
+        background: #1B262C;
+        border-radius: 60%;
+        transition: 0.5s ease-in-out;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+    a:hover span{
+        left: calc(100% - 55px);
+    }
+    a::after{
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 100%;
+        z-index: 1;
+        background: rgba(255,255,255,0.25);
+        transform: translateX(-170px)skewX(30deg);
+        transition: 0.75s ease-in-out;
+    }
+    a:hover::after{
+        transform: translateX(170px)skewX(30deg);
+    }
+}
+
+/*__________________________________________________table สี ตัวอังษร___________________________________________________*/
+.headtable {
+    color: #fff;
+    background:#121212 ;
+}
+.alldata th{
+    color: #4C566A  ;
+}
+.content{
+    padding-left: 85px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sidehome{    
+    position: fixed;
+    background: var(--my-main);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85px;
+    padding: 25px 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    box-shadow: 0.1px 0.5px 10px #000000;
+}
+/*_______________________________________________________container หน้าโชว_____________________________________________________*/
+.con-show{  
+    border-radius: 15px;
+    width: 87%;
+    margin: 0 auto;
+    background: #fff; 
+    padding: 30px;
+    box-shadow: 1px 2px 6px #000000;
+    
+}
+/*_________________________________________________________container_____________________________________________________________*/
+.con{
+    width: 87%;
+    margin: 0 auto;
+    p{
+        font-size: 30px;
+        padding-top: 8px; 
+        padding-bottom: 8px; 
+        color: var(--my-text);
+    }
+}
+/*___________________________________________________________เงาcard____________________________________________________________*/
+.card{
+    box-shadow: 5px 10px 8px #000000;
+}
+ /*_____________________________________________________จัดการpaginate_____________________________________________________________*/
+ .page{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+ /*_______________________________________________________หมดอายุใบชับขี่____________________________________________________________*/
+ .agedivingcard{
+    height: 442px;
+    background: #fff;
+    border-radius: 10px;
+    width: 58%;
+    h2{
+        font-size: 20px;
+    }
+}
+  /*_____________________________________________________สรุปจำนวนคน_____________________________________________________________*/
+ .tatalmenu{
+    height: 25rem;
+    width: 38%;
+    margin-left: 10px;
+ }
+ .totallist{
+    background: var(--clr);
+    color: #fff;
+ }
